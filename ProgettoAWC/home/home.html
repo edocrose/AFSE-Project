@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="icon" href="../immagini/marvel_icona.webp" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;300&family=Inclusive+Sans&family=Passion+One&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="card.css">
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="menu">
+      <ul>
+        <li><a href="#" onclick="getDataHome()" class="current-page">Home</a></li>
+        <li><a href="#" onclick="getDataNegozio2()">Negozio</a></li>
+        <li><a href="#" onclick="getDataScambia2()">Scambia</a></li>
+      </ul>
+    </div>
+      <div class="logo">
+        <img src="../immagini/marvel_icona.webp" alt="icona a sinistra">
+      </div>
+    <div class="navbar-right">
+      <div class="contenitoreCredito"></div>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="#" id="userIcon"><img src="../immagini/icona_utente.png"
+              alt="icona a destra"></a></button>
+        <div class="dropdown-content">
+          <a href="#" onclick="getData2()">Dati utente</a>
+          <a href="../login_registrazione/login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div>
+    <h1 class="titolo">Carte</h1>
+    <p id="percentuale" style="color: white;"></p>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 0%;" id="figurineProgress"></div>
+    </div>    
+    <div class="contenitore"></div>
+    <br>
+    <br>
+  </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+<script src="../get_data.js"></script>
+<script src="mazzo.js"></script>
+
+</html>

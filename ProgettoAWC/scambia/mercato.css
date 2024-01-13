@@ -1,0 +1,245 @@
+/* Stile base per il link */
+html{
+  height: 100%;
+}
+
+.header-scambi {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+
+.link-button {
+  top: 2px;
+  position: relative;
+  background: #1e9bff ;
+  color: #1e9bff;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 400;
+  padding: 10px 10px;
+  transition: 0.5s;
+  border: none;
+}
+  
+/* Stile al passaggio del mouse (hover) */
+.link-button:hover {
+  background: #1e9bff;
+  color: #1e9bff;
+  letter-spacing: 0.10em;
+  box-shadow: 0 0 35px #1e9bff;
+}
+  
+.link-button::before {
+  content: '';
+  inset: 2px;
+  position: absolute;
+  background: #27282c;
+}
+
+.link-button span {
+  position: relative;
+}
+
+.testo{
+    color: white;
+    font-size: 20px;
+}
+
+
+/*CSS PER SCAMBIA FIGURINE*/
+.richiesta-scambio h1 {
+  color: white;
+  text-align: center;
+}
+
+#FormScambio {
+  color: white;
+  text-align: center;
+}
+
+#FormScambio button {
+  position: relative;
+  background: #1e9bff;
+  color: #1e9bff;
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+  border: none;
+}
+
+#FormScambio button:hover {
+  background: #1e9bff;
+  color: #1e9bff;
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px #1e9bff;
+  cursor: pointer;
+}
+
+#FormScambio button:before {
+  content: '';
+  inset: 2px;
+  position: absolute;
+  background: #27282c;
+}
+
+#FormScambio button span {
+  position: relative;
+}
+
+.listaRichiesta {
+  background-color: red;
+  margin-left: 35%;
+  width: 30%;
+  color: white;
+  border-radius: 20px;
+}
+
+.listaDoppie {
+  justify-content: space-between;
+  align-items: center;
+  background-color: red;
+  margin-left: 35%;
+  width: 30%;
+  color: white;
+  border-radius: 20px;
+}
+
+.autocomplete-items {
+  display: flex;
+  align-items: center;
+}
+
+.autocomplete-items .list-img{
+  margin-left: 30px;
+  margin-right: 10px;
+  width: 20%;
+  height: 20%;
+  padding: 5%;
+
+}
+
+.change{
+  color: white;
+}
+
+/*da qua inizia il css delle varie proposte*/
+.mercato {
+  display: block;
+  justify-content: center;
+  align-items: flex-start;
+    /* Allineamento in alto */;
+  height: 100vh;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.change {
+  display: flex;
+  align-items: center;
+}
+/*css frecce*/
+.contenitore-frecce {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.freccia-sinistra,
+.freccia-destra {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.freccia-sinistra {
+  border-width: 20px 30px 20px 0;
+  border-color: transparent green transparent transparent;
+  margin-right: 10px;
+}
+
+.freccia-destra {
+  border-width: 20px 0 20px 30px;
+  border-color: transparent transparent transparent red;
+  margin-left: 10px;
+}
+/*css pulsante accetta*/
+.accetta {
+  position: relative;
+  background: rgb(1, 199, 1);
+  color: rgb(1, 199, 1);
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+  border: none;
+}
+
+.accetta:hover {
+  background: rgb(1, 199, 1);
+  color: rgb(1, 199, 1);
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px rgb(1, 199, 1);
+  cursor: pointer;
+}
+
+.accetta::before {
+  content: '';
+  inset: 2px;
+  position: absolute;
+  background: #27282c;
+}
+
+.accetta span {
+  position: relative;
+}
+
+
+
+/*css pulsante elimina*/
+.elimina {
+  position: relative;
+  background: rgb(202, 6, 6);
+  color: rgb(202, 6, 6);
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+  border: none;
+}
+
+.elimina:hover {
+  background: rgb(202, 6, 6);
+  color: rgb(202, 6, 6);
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px rgb(202, 6, 6);
+  cursor: pointer;
+}
+
+.elimina::before {
+  content: '';
+  inset: 2px;
+  position: absolute;
+  background: #27282c;
+}
+
+.elimina span {
+  position: relative;
+}
+
+.proposte {
+  display: block;
+  justify-content: center;
+  align-items: flex-start;
+    /* Allineamento in alto */;
+  height: 100vh;
+  margin-top: 20px;
+  margin-left: 50px;
+}

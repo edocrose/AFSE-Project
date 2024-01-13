@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Modifica dati</title>
+    <link rel="icon" href="../immagini/marvel_icona.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="dati_utente.css">
+    
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="menu">
+          <ul>
+            <li><a href="#" onclick="getDataHome2()">Home</a></li>
+            <li><a href="#" onclick="getDataNegozio2()">Negozio</a></li>
+            <li><a href="#" onclick="getDataScambia2()">Scambia</a></li>
+          </ul>
+        </div>
+          <div class="logo">
+            <img src="../immagini/marvel_icona.webp" alt="icona a sinistra" onclick="getDataHome()">
+          </div>
+        <div class="navbar-right">
+          <div class="contenitoreCredito"></div>
+          <div class="dropdown">
+            <button class="dropbtn"><a href="#" id="userIcon"><img src="../immagini/icona_utente.png"
+                  alt="icona a destra"></a></button>
+            <div class="dropdown-content">
+              <a href="#" onclick="getDataLogin()">Dati utente</a>
+              <a href="login.html">Logout</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="form_modifica">
+        <h1>Dati Personali</h1>
+        <form class="edit-form">
+          <br>
+          <label for="username">Nome Utente:</label>
+          <input type="text" id="username" name="username">
+          <br>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+          <br>
+          <label for="Password">Password:</label>
+          <input type="password" id="password" name="password">
+          <br>
+          <label for="superhero">Supereroe preferito:</label>
+          <input type="text" id="superhero" name="superhero">
+          <div class="lista"></div>
+          <br>
+          <a href="#" onclick="modifica()" class="link-button" id="modifica"><span>Modifica</span></a>
+          <a href="#" onclick="getDataLogin()" class="link-button" id="annulla"><span>Annulla Modifiche</span></a>
+        </form>
+      </div>
+      <script src="api-data.js"></script>
+      <script src="modifica.js"></script>
+      <script src="supereroe_preferito.js"></script>
+      <script src="../get_data.js"></script>
+      
+</body>
+</html>

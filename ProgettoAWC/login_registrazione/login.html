@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Marvel figure</title>
+    <link rel="icon" href="../immagini/marvel_icona.webp" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;300&family=Inclusive+Sans&family=Passion+One&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="log_reg.css">
+</head>
+
+<body>
+    <nav class="navbar">
+            <div class="logo">
+              <img src="../immagini/marvel_icona.webp" alt="icona a sinistra">
+            </div>
+      </nav>
+    <div class="box-form">
+        <div class="login-box">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <div>
+                    <label for="loginUsername">Nome utente:</label>
+                    <input type="text" id="loginUsername" name="loginUsername" required>
+                </div>
+                <div>
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <div>
+                    <button class="log" type="submit"><span>Accedi</span></button>
+                </div>
+            </form>
+            <h5>Non sei ancora registrato? <a href="registrazione.html">Registrati</a></h5>
+        </div>
+    </div>
+
+        <script src="api-data.js"></script>
+        <script src="login.js"></script>
+        <script src="../get_data.js"></script>
+</body>
+
+</html>

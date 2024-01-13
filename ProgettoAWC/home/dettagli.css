@@ -1,0 +1,63 @@
+/*css per il scopri di più delle carte*/
+
+
+.contenuto {
+    background-color: black;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.contenuto img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 0px 15px 0px 15px;
+    margin-right: 20px;
+}
+
+.contenuto h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.contenuto p {
+    color: white;
+    max-width: 800px;
+}
+
+
+.linea {
+    border-left: 5px solid red;
+    height: 345px;
+    width: 2px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.obj {
+    margin-left: 20px;
+    display: flex;
+}
+
+.obj h3 {
+    color: white;
+}
+
+.obj p {
+    color: white;
+}
+
+.obj ul {
+    color: white;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.comics,
+.events,
+.series {
+    flex: 1;
+    display: inline-block;
+    margin: 10px;
+}

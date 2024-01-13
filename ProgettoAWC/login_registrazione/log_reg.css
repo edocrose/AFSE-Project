@@ -1,0 +1,172 @@
+html, body {
+  height: 100%;
+}
+  
+/*.form_modifica {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+  
+h1 {
+  text-align: center;
+  color: black;
+}
+  
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+  
+label {
+  margin-top: 10px;
+  color: black;
+}
+  
+input {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+  
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+  
+/*.log:hover {
+  background-color: #29b95b;
+} */
+
+
+.lista {
+  background-color: red;
+  width: 300px;
+  color: white;
+  border-radius: 20px;
+}
+
+.autocomplete-items {
+  padding-left: 15px;
+}
+
+/* Stile per il form */
+#registrationForm {
+  max-width: 400px; /* Larghezza massima del form */
+  margin: 0 auto; /* Centra il form nella pagina */
+}
+
+/* Stile per ciascun div nel form */
+#registrationForm div {
+  margin-bottom: 10px; /* Spazio tra i campi */
+}
+
+/* Stile per le etichette */
+#registrationForm label {
+  display: block; /* Rendi le etichette una riga separata */
+  font-weight: bold; /* Rendi il testo in grassetto */
+}
+
+/* Stile per gli input */
+#registrationForm input {
+  width: 100%; /* Riempie completamente il div padre */
+  padding: 8px; /* Spazio interno all'input */
+  box-sizing: border-box; /* Include il padding nella larghezza totale */
+}
+
+#registrationForm button {
+  position: relative;
+  background: #1e9bff;
+  color: #1e9bff;
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+  border: none;
+}
+
+/* Stile per il pulsante di accesso quando si passa sopra */
+#registrationForm button:hover {
+  background: #1e9bff;
+  color: #1e9bff;
+  letter-spacing: 0.2em;
+  box-shadow: 0 0 18px #1e9bff;
+  cursor: pointer;
+}
+
+#registrationForm button::before {
+  content: '';
+  inset: 2px;
+  position: absolute;
+  background: #27282c;
+}
+
+#registrationForm button span {
+  position: relative;
+}
+
+/* Stile per il form */
+#loginForm {
+  max-width: 400px; /* Larghezza massima del form */
+  margin: 0 auto; /* Centra il form nella pagina */
+}
+
+/* Stile per ciascun div nel form */
+#loginForm div {
+  margin-bottom: 10px; /* Spazio tra i campi */
+}
+
+/* Stile per le etichette */
+#loginForm label {
+  display: block; /* Rendi le etichette una riga separata */
+  font-weight: bold; /* Rendi il testo in grassetto */
+}
+
+/* Stile per gli input */
+#loginForm input {
+  width: 100%; /* Riempie completamente il div padre */
+  padding: 8px; /* Spazio interno all'input */
+  box-sizing: border-box; /* Include il padding nella larghezza totale */
+}
+
+/* Stile per il pulsante di accesso */
+#loginForm button {
+  position: relative;
+  background: #1e9bff;
+  color: #1e9bff;
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+  border: none;
+}
+
+/* Stile per il pulsante di accesso quando si passa sopra */
+#loginForm button:hover {
+  background: #1e9bff;
+  color: #1e9bff;
+  letter-spacing: 0.2em;
+  box-shadow: 0 0 18px #1e9bff;
+  cursor: pointer;
+}
+
+#loginForm button::before {
+  content: '';
+  inset: 2px;
+  position: absolute;
+  background: #27282c;
+}
+
+#loginForm button span {
+  position: relative;
+}
