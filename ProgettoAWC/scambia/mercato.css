@@ -10,36 +10,31 @@ html{
 }
 
 .link-button {
-  top: 2px;
+  background-color: #27282c;
   position: relative;
-  background: #1e9bff ;
-  color: #1e9bff;
+  display: inline-block;
   text-decoration: none;
   text-transform: capitalize;
+  letter-spacing: 2px;
+  color: #1e9bff;
+  letter-spacing: 0.1em;
+  font-size: 17px;
   font-weight: 400;
   padding: 10px 10px;
   transition: 0.5s;
+  overflow: hidden;
   border: none;
 }
-  
+
 /* Stile al passaggio del mouse (hover) */
 .link-button:hover {
   background: #1e9bff;
-  color: #1e9bff;
-  letter-spacing: 0.10em;
-  box-shadow: 0 0 35px #1e9bff;
+  color: #050801;
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff;
+  cursor: pointer;
 }
   
-.link-button::before {
-  content: '';
-  inset: 2px;
-  position: absolute;
-  background: #27282c;
-}
-
-.link-button span {
-  position: relative;
-}
 
 .testo{
     color: white;
@@ -59,35 +54,26 @@ html{
 }
 
 #FormScambio button {
+  background-color: #27282c;
   position: relative;
-  background: #1e9bff;
-  color: #1e9bff;
-  text-decoration: none;
+  display: inline-block;
   text-transform: capitalize;
+  letter-spacing: 4px;
+  color: #1e9bff;
   letter-spacing: 0.1em;
   font-weight: 400;
-  padding: 10px 30px;
+  padding: 10px 15px;
   transition: 0.5s;
+  overflow: hidden;
   border: none;
 }
 
 #FormScambio button:hover {
   background: #1e9bff;
-  color: #1e9bff;
+  color: #050801;
   letter-spacing: 0.25em;
-  box-shadow: 0 0 35px #1e9bff;
+  box-shadow: 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff;
   cursor: pointer;
-}
-
-#FormScambio button:before {
-  content: '';
-  inset: 2px;
-  position: absolute;
-  background: #27282c;
-}
-
-#FormScambio button span {
-  position: relative;
 }
 
 .listaRichiesta {
@@ -168,71 +154,53 @@ html{
 }
 /*css pulsante accetta*/
 .accetta {
+  background-color: #27282c;
   position: relative;
-  background: rgb(1, 199, 1);
-  color: rgb(1, 199, 1);
-  text-decoration: none;
+  display: inline-block;
   text-transform: capitalize;
+  letter-spacing: 4px;
+  color: #27c010;
   letter-spacing: 0.1em;
   font-weight: 400;
-  padding: 10px 30px;
+  padding: 10px 15px;
   transition: 0.5s;
+  overflow: hidden;
   border: none;
 }
 
 .accetta:hover {
   background: rgb(1, 199, 1);
-  color: rgb(1, 199, 1);
+  color: #050801;
   letter-spacing: 0.25em;
-  box-shadow: 0 0 35px rgb(1, 199, 1);
+  box-shadow: 0 0 5px rgb(1, 199, 1) 0 0 5px rgb(1, 199, 1) 0 0 5px rgb(1, 199, 1) 0 0 5px rgb(1, 199, 1);
   cursor: pointer;
 }
-
-.accetta::before {
-  content: '';
-  inset: 2px;
-  position: absolute;
-  background: #27282c;
-}
-
-.accetta span {
-  position: relative;
-}
-
 
 
 /*css pulsante elimina*/
 .elimina {
+  background-color: #27282c;
   position: relative;
-  background: rgb(202, 6, 6);
-  color: rgb(202, 6, 6);
-  text-decoration: none;
+  display: inline-block;
   text-transform: capitalize;
+  letter-spacing: 4px;
+  color: rgb(202, 6, 6);
   letter-spacing: 0.1em;
   font-weight: 400;
-  padding: 10px 30px;
+  padding: 10px 15px;
   transition: 0.5s;
+  overflow: hidden;
   border: none;
 }
 
 .elimina:hover {
   background: rgb(202, 6, 6);
-  color: rgb(202, 6, 6);
+  color: #050801;
   letter-spacing: 0.25em;
-  box-shadow: 0 0 35px rgb(202, 6, 6);
+  box-shadow: 0 0 5px rgb(202, 6, 6) 0 0 5px rgb(202, 6, 6) 0 0 5px rgb(202, 6, 6) 0 0 5px rgb(202, 6, 6);
   cursor: pointer;
 }
 
-.elimina::before {
-  content: '';
-  inset: 2px;
-  position: absolute;
-  background: #27282c;
-}
-
-.elimina span {
-  position: relative;
-}
 
 .proposte {
   display: block;
@@ -243,3 +211,4 @@ html{
   margin-top: 20px;
   margin-left: 50px;
 }
+

@@ -30,17 +30,9 @@ function validaEmail(email) {
     return regexEmail.test(email);
 }
 
-// Funzione per convalidare una password utilizzando una regex
-function validaPassword(password) {
-    // La password deve contenere almeno 8 caratteri, almeno una lettera maiuscola, almeno una lettera minuscola e almeno un numero.
-    const regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    return regexPassword.test(password);
-}
 
 function controllaEsistenza(usernameMod, emailMod, utenti) {
     for(let i=0; i<utenti.length; i++){
-        //console.log("utenti"+utenti[i].username + "->mod" + usernameMod + "->norm" + username)
-        //console.log("utenti"+utenti[i].email + "->mod" + emailMod + "->norm" + emailPrev)
         if (usernameMod === utenti[i].username && usernameMod !== username) {
             alert("Username già esistente");
             return true;
@@ -91,10 +83,6 @@ function modifica(e){
         case !validaEmail(emailMod):
             alert("Inserisci un indirizzo e-mail corretto");
             break; // Aggiungi il break per interrompere l'esecuzione del switch se questo caso viene soddisfatto.
-    
-        case !validaPassword(passwordMod):
-            alert("La password deve avere almeno 8 caratteri con almeno 1 maiuscola, 1 minuscola e 1 numero");
-            break; // Aggiungi il break anche qui.
     
         default:
             modificaScambi(user.username, usernameMod);

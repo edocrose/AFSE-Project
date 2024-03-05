@@ -28,16 +28,26 @@ function validaEmail(email) {
     return emailRegex.test(email);
 }
 
-// Funzione per convalidare una password utilizzando una regex
-function validaPassword(password) {
-    // La password deve contenere almeno 8 caratteri, almeno una lettera maiuscola, almeno una lettera minuscola e almeno un numero.
-    const regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    return regexPassword.test(password);
+const popup = document.querySelector(".popup");
+const overlay = document.querySelector(".overlay");
+
+function apriPopup(message) {
+    popup.innerHTML = `
+    <h2>Benvenuto!</h2>
+    <p>${message}</p>
+    <button class="ok"><span>Ok</span></button>`;
+    popup.classList.add("open-popup");
+    overlay.classList.add("open")
 }
 
-function signup(e){
-    event.preventDefault();
+function chiudiPopup(popup) {
+    overlay.classList.remove("open");
+    popup.classList.remove("open-popup")
+    redirectToHome();
+}
 
+function signup(){
+    event.preventDefault();
     var username = document.getElementById('username').value;
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
@@ -59,9 +69,6 @@ function signup(e){
         case !validaEmail(email):
             alert("Inserisci un indirizzo e-mail corretto");
             break;
-        case !validaPassword(password):
-            alert("La password deve avere almeno 8 caratteri con almeno 1 maiuscola, 1 minuscola e 1 numero");
-            break;
         case controllaEsistenza(user, utenti):
             break;
         default:
@@ -69,8 +76,11 @@ function signup(e){
             console.table(utenti)
             window.localStorage.setItem('utenti', JSON.stringify(utenti))
             console.log('user added');
-            alert("Registrazione avvenuta con successo!");
-            redirectToHome();
+            apriPopup("La registrazione è avvenuta con successo!");
+            popup.querySelector(".ok").addEventListener("click", function () {
+                chiudiPopup(popup);
+            });
+            
     }
 
     

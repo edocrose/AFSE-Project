@@ -1,0 +1,454 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Changa', sans-serif;
+    background-image: url(immagini/sfondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+/*da qui inizia il css per il nav delle pagine*/
+/* Navbar generale */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    padding: 10px 20px;
+}
+
+/* Stile del menu a sinistra */
+.menu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.menu li {
+    list-style-type: none;
+}
+
+.menu li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 5px 20px;
+    font-size: 16px;
+    line-height: 1;
+    transition: 0.3s;
+}
+
+.menu li a.current-page {
+    color: gray;
+    pointer-events: none;
+}
+
+.menu li a:hover {
+    box-shadow: 0 -5px 0px black inset, 500px 0 0 rgba(30, 30, 30, 0.03) inset;
+    padding: 10px 15px 35px 15px;
+}
+
+/* Logo al centro */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex: 1;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* Navbar a destra */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+#userIcon img{
+    width: 70px;
+    height: 70px;
+    margin: 0 10px;
+    /* Aggiusta il margine come preferisci */
+}
+
+/* Contenitore del credito */
+.contenitoreCredito {
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.credito {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+}
+
+.avLogo {
+    width: 30px;
+    height: 30px;
+}
+/* Stile del pulsante a tendina */
+.dropbtn {
+    background-color: red;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Contenitore del menu a tendina */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+/* Contenuto del menu a tendina (nascosto) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 120px;
+    z-index: 1;
+}
+
+/* Link all'interno del menu a tendina */
+.dropdown-content a {
+    background-color: white;
+    color: black;
+    padding: 10px 5px;
+    text-decoration: none;
+    display: block;
+    max-width: 108px;
+}
+
+/* Cambia il colore del link quando ci passi sopra con il mouse */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Mostra il contenuto del menu a tendina quando passi sopra il pulsante */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*css per registrazione e login che alcuni pezzi sono in log_reg.css*/
+.box-form {
+    justify-content: space-around;
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: justify;
+}
+
+.registration-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.login-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+}
+
+.registration-box h1 {
+    background-color: red;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+
+.login-box h1 {
+    background-color: red;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+
+/*titolo pagina home*/
+.titolo {
+    color: white;
+    text-align: center;
+}
+/*da qui inizia il css per il acquista pacchetti*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+}
+
+.overlay.open {
+    display: block;
+}
+
+.popup{
+    position: fixed;
+    z-index: 999;
+    width: 400px;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    visibility: hidden;
+    transition: trasform 0.4s, top 0.4s;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.popup h2 {
+    margin-top: 10px;
+    font-size: 38px;
+    color: black;
+}
+
+.popup p {
+    font-size: 18px;
+    font-weight: 500px;
+    color: black;
+}
+
+.ok{
+    background-color: #27282c;
+    position: relative;
+    display: inline-block;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    color: #1e9bff;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 10px 15px;
+    transition: 0.5s;
+    overflow: hidden;
+    border: none;
+}
+
+.ok:hover {
+    background: #1e9bff;
+    letter-spacing: 0.20em;
+    color: #050801;
+    box-shadow: 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff;
+    cursor: pointer;
+}
+
+
+.open-popup{
+    visibility: visible;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content h1 {
+    text-align: center;
+    color: white;
+}
+
+.pacchetto {
+    width: 200px;
+    height: 350px;
+    margin: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image-container {
+    flex-grow: 1;
+    display: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.descrizione {
+    text-align: center;
+}
+
+
+.descrizione h3 {
+    color: white;
+}
+
+.descrizione .avLogoW {
+    width: 25px;
+    height: 25px;
+}
+
+.acquista {
+    background-color: #27282c;
+    position: relative;
+    display: inline-block;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    color: #1e9bff;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 10px 15px;
+    transition: 0.5s;
+    overflow: hidden;
+    border: none;
+}
+
+.acquista:hover {
+    background: #1e9bff;
+    color: #050801;
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff;
+    cursor: pointer;
+}
+
+
+.acquista span {
+    position: relative;
+}
+
+
+
+/*da qui inizia il css per acquisto di crediti*/
+.credits {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+.credits h2 {
+    margin-bottom: 10px;
+}
+
+.credits button {
+    background-color: #27282c;
+    position: relative;
+    display: inline-block;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    color: #1e9bff;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 10px 15px;
+    transition: 0.5s;
+    overflow: hidden;
+    border: none;
+}
+
+.quantity {
+    color: white;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.quantity-buttons button:hover {
+    background: #1e9bff;
+    color: #050801;
+    letter-spacing: 0.20em;
+    box-shadow: 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff;
+    cursor: pointer;
+}
+
+
+
+.minus,
+.plus {
+    font-size: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.total-price {
+    font-size: 16px;
+}
+/*css barra home*/
+/* Stile generale della barra di avanzamento */
+.progress {
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #ddd;
+    border-radius: 10px;
+    height: 20px;
+    max-width: 100%;
+}
+
+/* Stile della barra di avanzamento riempita */
+.progress-bar {
+    background-color: red;
+    /* Rosso Marvel */
+    border-radius: 10px;
+    height: 100%;
+    width: 0%;
+    /* Inizialmente a larghezza zero */
+    transition: width 0.5s ease-in-out;
+    /* Animazione di riempimento */
+}
+
+/* Stile del testo percentuale all'interno della barra */
+.progress-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    /* Testo bianco */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+/* Stile aggiuntivo per uno stile Marvel */
+.progress-bar-marvel {
+    background-color: red;
+    /* Rosso Marvel */
+    box-shadow: 0 0 10px red;
+}
+
+/* Stile per la barra di avanzamento quando è piena */
+.progress-bar-full {
+    background-color: #00ff00;
+    /* Verde quando la barra è piena */
+}
+
+#percentuale {
+    margin-left: 30px;
+}

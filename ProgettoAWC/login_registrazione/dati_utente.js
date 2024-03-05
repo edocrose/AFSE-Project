@@ -16,6 +16,8 @@ const usernameElement = document.getElementById('username');
 const emailElement = document.getElementById('email');
 const passwordElement = document.getElementById('password');
 const superheroElement = document.getElementById('superhero');
+const popup = document.querySelector(".popupElimina");
+const overlay = document.querySelector(".overlay");
 
 usernameElement.value=username;
 emailElement.value=data.email;
@@ -26,42 +28,53 @@ function modifica(){
     window.location.href = "modifica_dati.html?username="+username;
 };
 
-//
+function apriPopupElimina(){
+    popup.innerHTML = `
+                <h2>Attenzione!</h2>
+                <p>Stai cercando di eliminare questo account ne sei sicuro?</p>
+                <button class="conferma" onclick="elimina()">Conferma</button>
+                <button class="annulla" onclick="chiudiPopup()">Annulla</button>`
+    popup.classList.add("open-popup")
+    overlay.classList.add("open");
+}
 
 function elimina(){
-    var conferma = window.confirm("Sei sicuro di voler cancellare l'account?");
-    if (conferma) {
-        //rimuovo gli scambi dell'utente
-        var jsonS = localStorage.getItem('scambi');
-        var scambi = JSON.parse(jsonS);
-        for(let j = 0 ;j<scambi.length;j++){
-            if(scambi[j].utenteRichiedente == username){
-                scambi.splice(j, 1);
-            }
+    
+    //rimuovo gli scambi dell'utente
+    var jsonS = localStorage.getItem('scambi');
+    var scambi = JSON.parse(jsonS);
+    for(let j = 0 ;j<scambi.length;j++){
+        if(scambi[j].utenteRichiedente == username){
+            scambi.splice(j, 1);
         }
-
-        var modS = JSON.stringify(scambi);
-        localStorage.setItem('scambi', modS);
-
-        //rimuovo utente
-        var jsonU = localStorage.getItem('utenti');
-        var utenti = JSON.parse(jsonU);
-        for(var i = 0; i < utenti.length; i++){
-            if(utenti[i].username == username){
-                utenti.splice(i, 1);
-                break;
-            }
-        }
-
-        var modU = JSON.stringify(utenti);
-        localStorage.setItem('utenti', modU);
-
-        window.location.href="login.html";
-    } else {
-        window.location.href = "../home.html?username="+username;
     }
+
+    var modS = JSON.stringify(scambi);
+    localStorage.setItem('scambi', modS);
+
+    //rimuovo utente
+    var jsonU = localStorage.getItem('utenti');
+    var utenti = JSON.parse(jsonU);
+    for(var i = 0; i < utenti.length; i++){
+        if(utenti[i].username == username){
+            utenti.splice(i, 1);
+            break;
+        }
+    }
+
+    var modU = JSON.stringify(utenti);
+    localStorage.setItem('utenti', modU);
+    overlay.classList.remove("open");
+    popup.classList.remove("open-popup")
+    window.location.href="login.html";
     
 };
+
+function chiudiPopup() {
+    overlay.classList.remove("open");
+    popup.classList.remove("open-popup")
+    window.location.href = "dati_utente.html?username=" + username;
+}
 
 
 

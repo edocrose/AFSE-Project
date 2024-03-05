@@ -44,7 +44,37 @@ document.addEventListener("DOMContentLoaded", function () {
     pacchetti.forEach(function (pacchetto) {
         const priceSpan = pacchetto.querySelector(".price");
         const acquistaButton = pacchetto.querySelector(".acquista");
+        const popup = pacchetto.querySelector(".popup");
+        const overlay = document.querySelector(".overlay");
+        function apriPopup(credits){
+            popup.innerHTML = `
+                <h2>Grazie!</h2>
+                <p>Il tuo acquisto è avvenuto con successo</p>
+                <p>Crediti rimanenti: <span class="crediti">${credits}</span></p>
+                <button class="ok">Ok</button>`
+            popup.classList.add("open-popup")
+            overlay.classList.add("open");
+        }
+        function chiudiPopup() {
+            overlay.classList.remove("open");
+            popup.classList.remove("open-popup")
+            window.location.href = "pacchetto.html?username=" + username;
+        }
 
+        function apriPopupError() {
+            popup.innerHTML = `
+            <h2>Oh no!</h2>
+            <p>I tuoi crediti sono insufficienti, bisogna acquistane altri crediti!</p>
+            <button class="ok">Ok</button>`
+            popup.classList.add("open-popup")
+            overlay.classList.add("open");
+        }
+
+        function chiudiPopupRitorna() {
+            overlay.classList.remove("open");
+            popup.classList.remove("open-popup")
+            window.location.href = "negozio.html?username=" + username;
+        }
         //funzione acquista
         acquistaButton.addEventListener("click", async () =>{
             const packPrice = priceSpan.textContent;
@@ -86,12 +116,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem("pacchetto", pacchetto);
                 var mod = JSON.stringify(json);
                 localStorage.setItem('utenti', mod);
-                alert("Punti rimanenti: "+ user.credits);
-                window.location.href = "pacchetto.html?username="+username;
+                apriPopup(user.credits)
+                popup.querySelector(".ok").addEventListener("click", chiudiPopup);
             } else {
-                console.log("Punti insufficienti per l'acquisto")
+                apriPopupError()
+                popup.querySelector(".ok").addEventListener("click", chiudiPopupRitorna);
             }
-            
         });
 
     });
@@ -105,7 +135,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let creditsQuantity = 1;
     const creditPrice = 1; // Cambia questo valore al prezzo di ciascun credito
-
+    const popup = document.querySelector(".popup");
+    const overlay = document.querySelector(".overlay");
+    function apriPopup(credits) {
+        popup.innerHTML = `
+                <h2>Grazie!</h2>
+                <p>Il tuo acquisto è avvenuto con successo</p>
+                <p>I tuoi crediti ora sono: <span class="crediti">${credits}</span></p>
+                <button class="ok">Ok</button>`
+        popup.classList.add("open-popup")
+        overlay.classList.add("open");
+    }
+    function chiudiPopup() {
+        overlay.classList.remove("open");
+        popup.classList.remove("open-popup")
+        window.location.href = "negozio.html?username=" + username;
+    }
     creditsQuantityButtons.addEventListener("click", function (event) {
         if (event.target.classList.contains("minus")) {
             if (creditsQuantity > 1) {
@@ -134,8 +179,8 @@ document.addEventListener("DOMContentLoaded", function () {
         data.credits += numero;
         var mod = JSON.stringify(json);
         localStorage.setItem('utenti', mod);
-        alert("Grazie! Ora hai " + data.credits + " crediti")
-        window.location.href = "negozio.html?username="+username;
+        apriPopup(data.credits)
+        popup.querySelector(".ok").addEventListener("click", chiudiPopup);
         
     })
 

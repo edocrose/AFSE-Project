@@ -4,7 +4,7 @@
 <head>
     <title>Modifica dati</title>
     <link rel="icon" href="../immagini/marvel_icona.webp" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../main_style.css">
     <link rel="stylesheet" href="dati_utente.css">
     
 </head>
@@ -37,7 +37,7 @@
         <h1>Dati Personali</h1>
         <form class="edit-form">
           <br>
-          <label for="username">Nome Utente:</label>
+          <label for="username">Nickname:</label>
           <input type="text" id="username" name="username">
           <br>
           <label for="email">Email:</label>
@@ -50,8 +50,8 @@
           <input type="text" id="superhero" name="superhero">
           <div class="lista"></div>
           <br>
-          <a href="#" onclick="modifica()" class="link-button" id="modifica"><span>Modifica</span></a>
-          <a href="#" onclick="getDataLogin()" class="link-button" id="annulla"><span>Annulla Modifiche</span></a>
+          <a href="#" onclick="modifica()" class="link-button" id="modifica">Modifica</a>
+          <a href="#" onclick="getDataLogin()" class="link-button" id="annulla">Annulla Modifiche</a>
         </form>
       </div>
       <script src="api-data.js"></script>

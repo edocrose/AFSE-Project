@@ -2,49 +2,6 @@ html, body {
   height: 100%;
 }
   
-/*.form_modifica {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-}
-  
-h1 {
-  text-align: center;
-  color: black;
-}
-  
-.edit-form {
-  display: flex;
-  flex-direction: column;
-}
-  
-label {
-  margin-top: 10px;
-  color: black;
-}
-  
-input {
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-  
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-  
-/*.log:hover {
-  background-color: #29b95b;
-} */
-
-
 .lista {
   background-color: red;
   width: 300px;
@@ -81,37 +38,29 @@ button {
 }
 
 #registrationForm button {
+  background-color: #27282c;
   position: relative;
-  background: #1e9bff;
-  color: #1e9bff;
-  text-decoration: none;
+  display: inline-block;
   text-transform: capitalize;
+  letter-spacing: 4px;
+  color: #1e9bff;
   letter-spacing: 0.1em;
   font-weight: 400;
-  padding: 10px 30px;
+  padding: 10px 15px;
   transition: 0.5s;
+  overflow: hidden;
   border: none;
 }
 
 /* Stile per il pulsante di accesso quando si passa sopra */
 #registrationForm button:hover {
   background: #1e9bff;
-  color: #1e9bff;
-  letter-spacing: 0.2em;
-  box-shadow: 0 0 18px #1e9bff;
+  color: #050801;
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff;
   cursor: pointer;
 }
 
-#registrationForm button::before {
-  content: '';
-  inset: 2px;
-  position: absolute;
-  background: #27282c;
-}
-
-#registrationForm button span {
-  position: relative;
-}
 
 /* Stile per il form */
 #loginForm {
@@ -139,34 +88,27 @@ button {
 
 /* Stile per il pulsante di accesso */
 #loginForm button {
+  background-color: #27282c;
   position: relative;
-  background: #1e9bff;
-  color: #1e9bff;
-  text-decoration: none;
+  display: inline-block;
   text-transform: capitalize;
+  letter-spacing: 4px;
+  color: #1e9bff;
   letter-spacing: 0.1em;
   font-weight: 400;
-  padding: 10px 30px;
+  padding: 10px 15px;
   transition: 0.5s;
+  overflow: hidden;
   border: none;
 }
+
 
 /* Stile per il pulsante di accesso quando si passa sopra */
 #loginForm button:hover {
   background: #1e9bff;
-  color: #1e9bff;
-  letter-spacing: 0.2em;
-  box-shadow: 0 0 18px #1e9bff;
+  letter-spacing: 0.25em;
+  color: #050801;
+  box-shadow: 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff 0 0 5px #1e9bff;
   cursor: pointer;
 }
 
-#loginForm button::before {
-  content: '';
-  inset: 2px;
-  position: absolute;
-  background: #27282c;
-}
-
-#loginForm button span {
-  position: relative;
-}

@@ -4,7 +4,7 @@
 <head>
     <title>Dati utente</title>
     <link rel="icon" href="../immagini/marvel_icona.webp" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../main_style.css">
     <link rel="stylesheet" href="dati_utente.css">
     
 </head>
@@ -33,11 +33,12 @@
       </div>
     </div>
   </nav>
+  <div class="overlay"></div>
     <div class="form_modifica">
         <h1>Dati Personali</h1>
         <form class="edit-form">
           <br>
-          <label for="username">Nome Utente:</label>
+          <label for="username">Nickname:</label>
           <input type="text" id="username" name="username" readonly>
           <br>
           <label for="email">Email:</label>
@@ -49,17 +50,14 @@
           <label for="superhero">Supereroe preferito:</label>
           <input type="text" id="superhero" name="superhero" readonly>
           <br>
-          <a href="#" onclick="modifica()" class="link-button" id="mod"><span>
+          <a href="#" onclick="modifica()" class="link-button" id="mod">
             Modifica
-          </span>
           </a>
-          <a href="#" onclick="elimina()" class="link-button" id="annulla">
-            <span>
+          <a href="#" onclick="apriPopupElimina()" class="link-button" id="annulla">
               Elimina Account
-            </span>
           </a>
-          
         </form>
+        <div class="popupElimina"></div>
       </div>
       <script src="dati_utente.js"></script>
       <script src="../get_data.js"></script>

@@ -6,6 +6,40 @@ let date = new Date();
 
 const [timestamp, apiKey, hashValue] = [ts, publicKey, hashVal];
 
+const popup = document.querySelector('.popup');
+const overlay = document.querySelector('.overlay');
+
+function apriPopup(message) {
+  popup.innerHTML = `
+    <h2>Successo!</h2>
+    <p>${message}</p>
+    <button class="ok">Ok</button>`
+  popup.classList.add("open-popup");
+  overlay.classList.add("open")
+}
+
+function apriPopupError(message) {
+  popup.innerHTML = `
+    <h2>Errore!</h2>
+    <p>${message}</p>
+    <button class="ok">Ok</button>`;
+  popup.classList.add("open-popup");
+  overlay.classList.add("open")
+}
+
+function chiudiPopup(utenteRichiedente) {
+  overlay.classList.remove("open");
+  popup.classList.remove("open-popup")
+  redirect(utenteRichiedente);
+  window.location.href = "mercato.html?username=" + username;
+}
+
+function chiudiPopupError() {
+  overlay.classList.remove("open");
+  popup.classList.remove("open-popup")
+  window.location.href = "scambia.html?username=" + username;
+}
+
 function displayWords(value) {
   input.value = value;
   removeElements();
@@ -157,14 +191,22 @@ function scambia(e){
   console.log(scambi);
 
   if (!controllaRichiesta(cartaRichiesta, utenteRichiedente)){
-      alert("La carta richiesta è già presente nel tuo mazzo")
+      apriPopupError("La carta richiesta è già presente nel tuo mazzo")
+    popup.querySelector(".ok").addEventListener("click", function () {
+      chiudiPopupError();
+    });
   } else if (controllaScambio(scambio, scambi)) {
       scambi.push(scambio)
       window.localStorage.setItem('scambi', JSON.stringify(scambi))
-      alert("Scambio inserito con successo!");
-      redirect(utenteRichiedente);
+      apriPopup("Scambio inserito con successo!");
+    popup.querySelector(".ok").addEventListener("click", function () {
+      chiudiPopup(utenteRichiedente);
+    });
   } else {
-      alert("Scambio già esistente")
+      apriPopupError("Scambio già esistente")
+      popup.querySelector(".ok").addEventListener("click", function () {
+      chiudiPopupError();
+      });
   }
   
 }

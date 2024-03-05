@@ -56,6 +56,7 @@ var scambi = JSON.parse(jsonScambi);
 var index = null
 
 var container = document.querySelector('.mercato');
+var overlay = document.querySelector('.overlay');
 
 async function displayScambi() {
   for (var i = 0; i < scambi.length; i++) {
@@ -71,7 +72,46 @@ async function displayScambi() {
 }
 displayScambi();
 
-function effettuaScambio(user, scambio) {
+function apriPopup(message, popup) {
+  popup.innerHTML = `
+  <h2>Successo!</h2>
+  <p>${message}</p>
+  <button class="ok">Ok</button>`
+  popup.classList.add("open-popup");
+  overlay.classList.add("open")
+}
+
+function apriPopupError(message, popup) {
+  popup.innerHTML = `
+  <h2>Mi dispiace!</h2>
+  <p>${message}</p>
+  <button class="ok">Ok</button>`
+  popup.classList.add("open-popup");
+  overlay.classList.add("open")
+}
+
+function chiudiPopupError(popup) {
+  overlay.classList.remove("open");
+  popup.classList.remove("open-popup")
+  window.location.href = "mercato.html?username=" + username;
+}
+
+function chiudiPopup(popup) {
+  overlay.classList.remove("open");
+  popup.classList.remove("open-popup")
+  getDataHome2();
+}
+
+function effettuaScambio(user,popup, scambio ) {
+  for (let y=0; y<accetta.carte.length; y++){
+    if(accetta.carte[y].name == scambio.cartaCeduta){
+      apriPopupError("La carta che stai accettando è già nel tuo mazzo!", popup);
+      popup.querySelector(".ok").addEventListener("click", function () {
+        chiudiPopupError(popup);
+      });
+      return 
+    }
+  }
   var scambioCompl = {
     cartaRichiesta: scambio.cartaRichiesta,
     cartaCeduta: scambio.cartaCeduta,
@@ -79,12 +119,6 @@ function effettuaScambio(user, scambio) {
     utenteAccetta: user.username,
   };
   
-  for (let y=0; y<accetta.carte.length; y++){
-    if(accetta.carte[y].name == cartaCeduta){
-      alert ("La carta che stai accentando è già nel tuo mazzo!")
-      return 
-    }
-  }
 
   richiedente = utenti[trovaUtente(scambioCompl.utenteRichiedente)];
 
@@ -96,8 +130,10 @@ function effettuaScambio(user, scambio) {
   var controlloMazzo = trovaCarta(scambioCompl.cartaCeduta, accetta.carte);
   console.log(accetta.carte[controlloMazzo]);
   if(controlloMazzo!=null){
-    alert("La carta è già presente nel mazzo");
-    window.location.href = "mercato.html?username=" + username;
+    apriPopupError("La carta è già presente nel mazzo!",popup);
+    popup.querySelector(".ok").addEventListener("click", function () {
+      chiudiPopupError(popup);
+    });
   } else if (indexRichiestaDoppie != null) {
     var cartaCeduta = richiedente.doppie[indexCedutaDoppie];
     accetta.carte.push(cartaCeduta);
@@ -118,7 +154,7 @@ function effettuaScambio(user, scambio) {
     function cancellaScambi(){
       if(!controllaDoppie(cartaRichiesta, accetta)){
         for(let j=0; j<scambi.length; j++){  
-          if(scambi[j].utenteAccetta = accetta.username){
+          if(scambi[j].utenteAccetta = accetta.username){ 
             console.log(scambi[j].cartaCeduta + "==" + cartaRichiesta.name)
             console.log(scambi[j].cartaRichiesta + "==" + cartaCeduta.name)
             if(scambi[j].cartaCeduta == cartaRichiesta.name || scambi[j].cartaRichiesta == cartaCeduta.name){
@@ -169,11 +205,15 @@ function effettuaScambio(user, scambio) {
     localStorage.setItem('utenti', JSON.stringify(utenti));
     localStorage.setItem('scambi', JSON.stringify(scambi));
 
-    alert("Scambio effettuato con successo");
-    getDataHome2();
+    apriPopup("Scambio effettuato con successo",popup);
+    popup.querySelector(".ok").addEventListener("click", function () {
+      chiudiPopup(popup);
+    });
   }else{
-    alert("Non hai la carta richiesta!");
-    window.location.href = "mercato.html?username=" + username;
+    apriPopupError("Non hai la carta richiesta!",popup);
+    popup.querySelector(".ok").addEventListener("click", function () {
+      chiudiPopupError(popup);
+    });
   }
 
 }
@@ -261,14 +301,17 @@ async function createChangeElement(scambio, index) {
     accetta.textContent = "Accetta";
     button.appendChild(accetta)
     button.className = 'accetta';
-    button.addEventListener('click', function () {
-      effettuaScambio(accetta, scambi[index], index);
-    });
-    // Aggiungi tutti gli elementi al "change"
+    var popup = document.createElement('div')
+    popup.className = 'popup'
     change.appendChild(cartaRichiesta);
     change.appendChild(contenitoreFrecce);
     change.appendChild(cartaCeduta);
     change.appendChild(button);
+    change.appendChild(popup)
+    button.addEventListener('click', function () {
+      effettuaScambio(accetta,popup,scambi[index]);
+    });
+    // Aggiungi tutti gli elementi al "change"
 
     resolve(change); // Risolvi la promessa quando l'elemento è stato creato
   });
